@@ -44,8 +44,6 @@ int findDiff(char* firstKey, char* secondKey) {
     } else {
         difference = 12 - firstIndex + secondIndex;
     }
-    printf("%d first\n", firstIndex);
-    printf("%d second\n", secondIndex);
     return difference;
 }
 
@@ -59,7 +57,6 @@ int main(int argc, char* argv[]) {
             intervalName = interval[i];
         }
     }
-    printf("%d is interval\n", intervalIndex);
     printf("%s to %s is a %s\n", argv[2], argv[3], intervalName);
     
     return 0;
