@@ -1,11 +1,3 @@
-//
-//  interval.c
-//  
-//
-//  Created by Mackenzie Tjogas on 3/27/16.
-//
-//
-
 #include "interval.h"
 #include <stdio.h>
 #include <string.h>
@@ -48,7 +40,7 @@ int findDiff(char* firstKey, char* secondKey) {
 }
 
 int main(int argc, char* argv[]) {
-    int intervalIndex = findDiff(argv[2], argv[3]);
+    int intervalIndex = findDiff(argv[1], argv[2]);
     char* intervalName;
     for (int i = 0; i < 12; i++) {
         if (intervalIndex == 0) {
@@ -57,7 +49,7 @@ int main(int argc, char* argv[]) {
             intervalName = interval[i];
         }
     }
-    printf("%s to %s is a %s\n", argv[2], argv[3], intervalName);
+    printf("%s to %s is a %s\n", argv[1], argv[2], intervalName);
     
     return 0;
 }
