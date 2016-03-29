@@ -9,7 +9,7 @@ int findNewLength(char* template, int word_count, char* words[]) {
     int stringLength = strlen(template);
     int var;
     for (int i = 0; i <= stringLength; i++) {
-        if (isdigit(template[i])) {
+        if (isdigit(template[i]) && !(template[i] - '0' >= word_count)) {
             var = template[i] - '0';
             count += strlen(words[var]);
         } else {
@@ -24,7 +24,7 @@ char* madlib_by_numbers(char* template, int word_count, char* words[]) {
     char* orderedMadlib = (char*)malloc(sizeof(char) * (length + 1));
     
     for (int i = 0; i <= strlen(template); i++) {
-        if (!isdigit(template[i])) {
+        if (!isdigit(template[i]) || (template[i] - '0' >= word_count)) {
             strncat(orderedMadlib, &template[i], 1);
         } else {
             strcat(orderedMadlib, words[template[i] - '0']);
@@ -32,5 +32,3 @@ char* madlib_by_numbers(char* template, int word_count, char* words[]) {
     }
     return orderedMadlib;
 }
-
-
