@@ -1,4 +1,3 @@
-
 #include "chord.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,6 +9,7 @@ void majorKey(char* key) {
     char* original = key;
     char* keyTwo;
     char* keyThree;
+                
     for (int i = 0; i < 12; i++) {
         if (strncmp(key, keyboard[i], 12) == 0) {
             keyTwo = keyboard[((i+4)%12)];
@@ -40,6 +40,7 @@ void domSeventh(char* key) {
     char* keyTwo;
     char* keyThree;
     char* keyFour;
+            
     for (int i = 0; i < 12; i++) {
         if (strncmp(key, keyboard[i], 12) == 0) {
             keyTwo = keyboard[((i+4)%12)];
@@ -72,10 +73,9 @@ int main(int argc, char* argv[]) {
     if (argc != 3) {
         printf("please enter a single key\n");
     }
-    majorKey(argv[2]);
-    minorKey(argv[2]);
-    domSeventh(argv[2]);
-    dimSeventh(argv[2]);
+    majorKey(argv[1]);
+    minorKey(argv[1]);
+    domSeventh(argv[1]);
+    dimSeventh(argv[1]);
     return 0;
 }
-
