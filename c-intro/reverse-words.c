@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
-//I decided to treat the extra spaces as letters. 
+//I decided to treat the extra spaces as letters (so basicaly "reversed" them along with the words). 
 
 void reverse_words(char* string) {
     
