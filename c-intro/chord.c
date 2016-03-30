@@ -9,7 +9,6 @@ void majorKey(char* key) {
     char* original = key;
     char* keyTwo;
     char* keyThree;
-                
     for (int i = 0; i < 12; i++) {
         if (strncmp(key, keyboard[i], 12) == 0) {
             keyTwo = keyboard[((i+4)%12)];
@@ -19,12 +18,10 @@ void majorKey(char* key) {
     }
     printf("%s: %s %s %s\n", original, original, keyTwo, keyThree);
 }
-
 void minorKey(char* key) {
     char* original = key;
     char* keyTwo;
     char* keyThree;
-            
     for (int i = 0; i < 12; i++) {
         if (strncmp(key, keyboard[i], 12) == 0) {
             keyTwo = keyboard[((i+3)%12)];
@@ -34,13 +31,11 @@ void minorKey(char* key) {
     }
     printf("%sm: %s %s %s\n", original, original, keyTwo, keyThree);
 }
-
 void domSeventh(char* key) {
     char* original = key;
     char* keyTwo;
     char* keyThree;
     char* keyFour;
-            
     for (int i = 0; i < 12; i++) {
         if (strncmp(key, keyboard[i], 12) == 0) {
             keyTwo = keyboard[((i+4)%12)];
@@ -57,7 +52,6 @@ void dimSeventh(char* key) {
     char* keyTwo;
     char* keyThree;
     char* keyFour;
-            
     for (int i = 0; i < 12; i++) {
         if (strncmp(key, keyboard[i], 12) == 0) {
             keyTwo = keyboard[((i+3)%12)];
