@@ -1,8 +1,8 @@
-
-
 #include "reverse-range-in-place.h"
 #include <string.h>
 #include <stdio.h>
+
+//I decided to treat the extra spaces as letters. 
 
 void reverse_words(char* string) {
     
@@ -22,4 +22,3 @@ void reverse_words(char* string) {
     reverse_range_in_place(string, 0, strlen(string));
     
 }
-
