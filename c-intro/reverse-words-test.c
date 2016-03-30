@@ -1,3 +1,4 @@
+
 #include "reverse-words.h"
 #include <string.h>
 #include <stdio.h>
@@ -27,6 +28,4 @@ int main(int argc, char* argv[]) {
     reverse_words(words_to_use4);
     char* reversed_version4 = "there  !  hello    Well";
     assert(strncmp(words_to_use4, reversed_version4, length4) == 0);
-
 }
-
