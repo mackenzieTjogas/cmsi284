@@ -46,10 +46,9 @@ int main(int argc, char* argv[]) {
         if (intervalIndex == 0) {
             intervalName = "perfect octave";
         } else if (intervalIndex == i) {
-            intervalName = interval[i];
+            intervalName = interval[i - 1];
         }
     }
     printf("%s to %s is a %s\n", argv[1], argv[2], intervalName);
-    
     return 0;
 }
