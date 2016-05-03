@@ -2,7 +2,7 @@
 	global	main
 	
 	section	.text
-main:
+main: 
 					
 	push	rsi        
 	mov     rax, 1                	; system call 1 is write
