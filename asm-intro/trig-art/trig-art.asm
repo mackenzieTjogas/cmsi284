@@ -1,34 +1,34 @@
 	global  main 
-  extern  cos 
+  	extern  cos 
 	extern	sin 
-  extern  printf 
+  	extern  printf 
         
 	section .text
  
 output: db      " ", 0 
-printer:db	    " x", 10, 0
+printer:db	" x", 10, 0
 pi:     dq      3.141592653589793 
-delta:  dq      18.0		              ; One line moves pi/delta radians.
-two:    dq      2.0		                ; For two pi. 
-width:	dq	    20.0		              ; terminal width
+delta:  dq      18.0		      ; One line moves pi/delta radians.
+two:    dq      2.0		      ; For two pi. 
+width:	dq	    20.0	      ; terminal width
 
 main:   push    rbp 
 
 L0:     movsd   xmm0, [radian]	      ; Put the value of radian into xmm0 
         call    cos                   ; Call cosine. 
         movsd   [cosine], xmm0        ; Display the results. 
-        movsd	  xmm2, [cosine]	       
-        addsd   xmm2, [two] 	        ; add the value of two to our result
+        movsd	xmm2, [cosine]	       
+        addsd   xmm2, [two] 	      ; add the value of two to our result
         mulsd   xmm2, [width] 
-        cvtsd2si r13, xmm2	          ; convert to int to get the number of spaces to print
+        cvtsd2si r13, xmm2	      ; convert to int to get the number of spaces to print
 spaces:
-	      mov	    rdi, output	          ; spaces into rdi
-	      mov	    rax, 1       
-	      call    printf		            ; print the spaces 
+	mov	rdi, output	      ; spaces into rdi
+	mov	rax, 1       
+	call    printf		      ; print the spaces 
 
-	dec	r13		                          ; decrement the number of spaces by 1 
-	jnz	spaces 		                      ; if it is not zero print more spaces
-	mov	rdi, printer	                  ; prints x
+	dec	r13		      ; decrement the number of spaces by 1 
+	jnz	spaces 		      ; if it is not zero print more spaces
+	mov	rdi, printer	      ; prints x
 	mov	rsi, r13
 	call	printf
 
@@ -47,7 +47,7 @@ spaces:
         section .data 
 
 radian: dq      0.0
-sine:	  dq	    0.0 
+sine:	dq	0.0 
 cosine: dq      0.0
-space:	dq	    0 
+space:	dq	0 
 
